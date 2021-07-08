@@ -1,61 +1,179 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Users</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-	crossorigin="anonymous">
-<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
-</head>
-<body>
-	<div class="container my-2">
-		<div class="card">
-			<div class="card-body">
-				<div th:switch="${students}" class="container my-5">
-					<p class="my-5">
-						<a href="/students/signup" class="btn btn-primary"><i
-							class="fas fa-user-plus ml-2"> Add student</i></a>
-					</p>
-					<div class="col-md-10">
-						<h2 th:case="null">No Students yet!</h2>
-						<div th:case="*">
-							<table class="table table-striped table-responsive-md">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Email</th>
-										<th>Phone No</th>
-										<th>Edit</th>
-										<th>Delete</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr th:each="student : ${students}">
-										<td th:text="${student.name}"></td>
-										<td th:text="${student.email}"></td>
-										<td th:text="${student.phoneNo}"></td>
-										<td><a th:href="@{/students/edit/{id}(id=${student.id})}"
-											class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
-										<td><a
-											th:href="@{/students/delete/{id}(id=${student.id})}"
-											class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Nguyễn Viết Long, Cái gì&nbsp;đó chẻn biết, 15, 10, 2k, 21, Ảnh">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.19.4, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/default-logo.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body"><header class="u-clearfix u-header u-sticky u-header" id="sec-052d"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
+          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="About.html" style="padding: 10px 20px;">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.html" style="padding: 10px 20px;">Contact</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html" style="padding: 10px 20px;">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html" style="padding: 10px 20px;">Contact</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-align-center u-clearfix u-grey-5 u-section-1" id="carousel_c160">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div alt="" class="u-border-15 u-border-palette-4-base u-image u-image-circle u-image-1" data-image-width="1600" data-image-height="1067"></div>
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h2 class="u-text u-text-1">Nguyễn Viết Long</h2>
+                  <h5 class="u-custom-font u-text u-text-font u-text-2">Developer</h5>
+                  <a href="https://nicepage.com/k/children-website-templates" class="u-active-black u-align-left u-border-2 u-border-active-black u-border-black u-border-hover-black u-btn u-button-style u-hover-black u-none u-text-active-white u-text-black u-text-hover-white u-btn-1">contact us</a>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <p class="u-text u-text-3">Một kỹ sư phần mềm siêu cấp vip pro với hơn 2 năm kinh nghiệm trong lĩnh vực code tool.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-shading u-section-2" src="" data-image-width="1280" data-image-height="800" id="sec-85c5">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-align-center u-container-style u-group u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <h2 class="u-text u-text-1">Cái gì&nbsp;đó chẻn biết</h2>
+            <p class="u-text u-text-2">Giải thích cho cái gì&nbsp;đó mà cũng chẻn biết</p>
+          </div>
+        </div>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
+                <h1 class="u-text u-text-default u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">15</h1>
+                <p class="u-text u-text-4">Ngày sinh</p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-list-item-2">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <h1 class="u-text u-text-default u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">10</h1>
+                <p class="u-text u-text-6">Tháng sinh</p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-list-item-3">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
+                <h1 class="u-text u-text-default u-title u-text-7" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">2k</h1>
+                <p class="u-text u-text-8">Năm sinh</p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-list-item-4">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-5">
+                <h1 class="u-text u-text-default u-title u-text-9" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">21</h1>
+                <p class="u-text u-text-10">Tuổi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="" class="u-btn u-button-style u-btn-1">Button</a>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-3" id="sec-3ff4">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1">Ảnh</h2>
+        <p class="u-text u-text-2">Ảnh gì&nbsp;đó</p>
+        <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
+          <div class="u-gallery-inner u-gallery-inner-1">
+            <div class="u-effect-fade u-gallery-item">
+              <div class="u-back-slide" data-image-width="1068" data-image-height="1600">
+                <img class="u-back-image u-expanded" src="images/PNV_3861.jpg">
+              </div>
+              <div class="u-over-slide u-shading u-over-slide-1">
+                <h3 class="u-gallery-heading"></h3>
+                <p class="u-gallery-text"></p>
+              </div>
+            </div>
+            <div class="u-effect-fade u-gallery-item">
+              <div class="u-back-slide" data-image-width="1600" data-image-height="1067">
+                <img class="u-back-image u-expanded" src="images/IMG_3995.jpg">
+              </div>
+              <div class="u-over-slide u-shading u-over-slide-2">
+                <h3 class="u-gallery-heading"></h3>
+                <p class="u-gallery-text"></p>
+              </div>
+            </div>
+            <div class="u-effect-fade u-gallery-item">
+              <div class="u-back-slide" data-image-width="1536" data-image-height="2048">
+                <img class="u-back-image u-expanded" src="images/eb26dad16ab89fe6c6a9.jpg">
+              </div>
+              <div class="u-over-slide u-shading u-over-slide-3">
+                <h3 class="u-gallery-heading"></h3>
+                <p class="u-gallery-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f5f7"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Copy Right : Nguyễn Viết Long</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
+    </section>
+  </body>
 </html>
